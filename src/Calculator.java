@@ -3,27 +3,37 @@ public class Calculator {
     int num2;
     int result;
 
-    public void SetNumbers(int num1, int num2) {
-
+    public void setNumbers(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
     }
 
     public int add(){
-        return 0;
+        result = num1 + num2;
+        return result;
     }
 
     public int subtract(){
-        return 0;
+        result = num1 - num2;
+        return result;
     }
 
     public int multiply(){
-        return 0;
+        result = 0;
+        for(int i = 0; i<num2; i++)
+            result = result + num1;
+        return result;
     }
 
-    public int divide(){
-        return 0;
+    public int divide() {
+        result = 0;
+        for(int i = num1; i>0; i = i-num2)
+            result ++;
+        return result;
     }
 
-    public void displayResult(){
+    public void displayResult(String operator){
+        System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
     }
 }
 
